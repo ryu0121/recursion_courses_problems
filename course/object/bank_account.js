@@ -12,13 +12,11 @@ class BankAccount{
   }
 
   showInfo(){
-    console.log("bank: " + this.bankName);
-    console.log("owner name: " + this.ownerName);
-    console.log("bank account number: " + this.getRandomInteger());
+    return "bank: " + this.bankName + "\nowner name: " + this.ownerName + "\nbank account number: " + this.getRandomInteger(1, Math.pow(10, 8));
   }
 
   getRandomInteger(min, max){
-    return Math.round(Math.rondom() * (max - min) + min);
+    return Math.round(Math.random() * (max - min) + min);
   }
 
   depositMoney(depositAmount){
@@ -43,12 +41,12 @@ class BankAccount{
 
 let user1 = new BankAccount("Chase", "Claire Simmons", 30000, 0.010001);
 let user2 = new BankAccount("Bank Of America", "Remy Clay", 10000, 0.010001);
-user1.showInfo();
+console.log(user1.showInfo());
 console.log(user1.withdrawMoney(1000));
 console.log(user1.depositMoney(10000));
 console.log(user1.pastime(200));
 
-user2.showInfo();
+console.log(user2.showInfo());
 console.log(user2.withdrawMoney(5000));
 console.log(user2.depositMoney(12000));
 console.log(user2.pastime(500));
