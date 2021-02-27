@@ -239,5 +239,5 @@ lineCD = new Line(new Point(6,3), new Point(4,0))
 lineDA = new Line(new Point(4,0), new Point(0,4))
 test = new Quadrilaterals(lineAB,lineBC,lineCD,lineDA)
 console.log(test.getShapeType())
-console.log(test.getAngle());
+test.getAngle();
 test.draw();
