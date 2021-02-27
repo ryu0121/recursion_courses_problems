@@ -77,17 +77,17 @@ class Quadrilaterals{
     return this.lineAC.getLength() * (height1 + height2) / 2; //共通の底辺 * (△ABCの高さ + △ADCの高さ)
   }
 
-  getAngle(){
+  getAngle(angle){
     if(!this.isQuadrilateral()){
       this.angleDAB = 0;
       this.angleABC = 0;
       this.angleCDA = 0;
       this.angleBCD = 0;
     };
-    console.log(this.angleDAB);
-    console.log(this.angleABC);
-    console.log(this.angleCDA);
-    console.log(this.angleBCD);
+    if(angle == "DAB") return this.angleDAB;
+    else if(angle == "ABC") return this.angleABC;
+    else if(angle == "CDA") return this.angleCDA;
+    else if(angle == "BCD") return this.angleBCD;
   }
 
   draw(){
@@ -185,6 +185,7 @@ lineCD = new Line(new Point(4,0), new Point(8,6))
 lineDA = new Line(new Point(8,6), new Point(4,12))
 rhombus = new Quadrilaterals(lineAB,lineBC,lineCD,lineDA)
 console.log(rhombus.getShapeType())
+console.log(rhombus.getAngle("ABC"));
 rhombus.draw();
 
 // // //test5 平行四辺形１
@@ -239,5 +240,5 @@ lineCD = new Line(new Point(6,3), new Point(4,0))
 lineDA = new Line(new Point(4,0), new Point(0,4))
 test = new Quadrilaterals(lineAB,lineBC,lineCD,lineDA)
 console.log(test.getShapeType())
-test.getAngle();
+console.log(test.getAngle("ABC"));
 test.draw();
