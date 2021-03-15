@@ -1,0 +1,19 @@
+@media (min-width: 992px){
+  .vh100{
+    height: 100vh;
+  }
+}
+.img-box{
+  height: 300px;
+  width: 300px;
+}
+
+.ordered-number-box{
+  height: 100px;
+  width: 100px;
+}
+
+.nine-buttons{
+  height: 80px;
+  width: 80px;
+}
