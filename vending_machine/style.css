@@ -1,0 +1,50 @@
+.img-box{
+  height: 300px;
+  width: 300px;
+}
+
+.initial-box{
+  width: 90%;
+  height: 90%;
+}
+
+.chosen-number-box{
+  height: 100px;
+  width: 100px;
+}
+
+.nine-buttons{
+  height: 80px;
+  width: 80px;
+}
+
+.deplete-animation{
+  animation: deplete 1s ease forwards;
+}
+
+.expand-animation{
+  animation: deplete 1s ease reverse forwards;
+}
+
+@keyframes deplete {
+  0%{
+      width: 100%;
+      height: 100%;
+      opacity: 1;
+  }
+  100%{
+      width: 0%;
+      height: 100%;
+      opacity: 0;
+  } 
+}
+
+@media (min-width: 992px){
+  .vh100{
+    height: 100vh;
+  }
+  .nine-buttons{
+    height: 120px;
+    width: 120px;
+  }
+}
