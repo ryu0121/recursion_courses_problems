@@ -32,7 +32,7 @@ sliderShow.append(main);
 sliderShow.append(extra);
 
 //itemList のインデックスと対応しています
-main.setAttribute("index-data", "0");
+main.setAttribute("data-index", "0");
 
 //商品番号、名前、値段を表示するelementです
 let displayNumberDiv = document.getElementById("number");
@@ -52,7 +52,7 @@ const buttons = document.querySelectorAll(".nine-buttons");
 //イベントハンドラのステートメント。画像を表示します。
 //if文を使って「選ばれた商品にいくには右回りと左周りのどちらが近いか」で分岐させています。
 function slideSteps(chosenNumber){
-  let currItemNumber = parseInt(main.getAttribute("index-data")) + 1;
+  const currItemNumber = parseInt(main.getAttribute("data-index")) + 1;
   if(chosenNumber > currItemNumber){
     (chosenNumber - currItemNumber <= Math.floor(buttons.length/2))
     ? slideStepsHelper(1, chosenNumber - currItemNumber) : slideStepsHelper(-1, buttons.length - chosenNumber + currItemNumber);
@@ -68,13 +68,13 @@ function slideSteps(chosenNumber){
 //countは現在の商品番号と移動先の商品番号の距離です
 //こちらが1になるまで商品の移動を続けます。
 function slideStepsHelper(step, count){
-  let index = parseInt(main.getAttribute("index-data"));
-  let currElement = itemList[index].img;
+  let index = parseInt(main.getAttribute("data-index"));
+  const currElement = itemList[index].img;
   index += step;
   if(index <= -1) index = buttons.length - 1;
   else if(index >= 9) index = 0;
-  main.setAttribute("index-data", index.toString());
-  let nextElement = itemList[index].img;
+  main.setAttribute("data-index", index.toString());
+  const nextElement = itemList[index].img;
   if(step === 1) {
     animationMain(currElement, nextElement, "right");
   }
@@ -115,5 +115,5 @@ for(let i = 0; i < itemList.length; i++){
 
 //PUSHボタンを押したらalertで購入をお知らせします。
 document.getElementById("order-button").addEventListener("click", function(){
-  alert("You've got " + itemList[main.getAttribute("index-data")].name);
+  alert("You've got " + itemList[main.getAttribute("data-index")].name);
 })
