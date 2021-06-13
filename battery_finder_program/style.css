@@ -1,0 +1,25 @@
+.vh100{
+  min-height: 100vh;
+}
+
+select{
+  height: 40px;
+}
+
+input{
+  width: 40px;
+}
+
+.battery-name{
+  font-size: 1.2rem;
+}
+
+@media (min-width: 992px){
+  .vh80{
+    height: 80%;
+  }
+
+  .battery-name{
+    font-size: 2rem;
+  }
+}
