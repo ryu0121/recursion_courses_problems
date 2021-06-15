@@ -1,0 +1,58 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+
+  <title>Page 1</title>
+</head>
+<body>
+  <div class="d-flex align-items-center justify-content-center bg-dark vh-100">
+    <div class="d-flex align-items-center flex-column col-10 col-md-7">
+      <div id="initial-form" class="bg-light col-12 p-4">
+        <h3 class="py-2">あなたの銀行情報を入力してください。</h3>
+        <form id="bank-form" onsubmit="initializeUserAccount(); event.preventDefault()">
+          <div class="form-row">
+            <div class="form-group col-6">
+              <input name="firstName" type="text" class="form-control" placeholder="名前" value="太郎" required>
+            </div>
+            <div class="form-group col-6">
+              <input name="lastName" type="text" class="form-control" placeholder="苗字" value="山田" required>
+            </div>
+          </div>
+          <div class="form-group col-12 px-0">
+            <input name="email" type="email" class="form-control" placeholder="メールアドレス" value="example@test.com" required>
+          </div>
+          <div class="form-group col-12 px-0">
+            <input name="deposit" type="text" class="form-control" placeholder="最初の残高" value="20" required>
+          </div>
+          <div class="form-group form-row">
+            <div class="form-check mr-2">
+                <input class="form-check-input" type="radio" name="accountType" id="accountType1" value="savings" checked required>
+                <label class="form-check-label" for="accountType1">
+                    Savings
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="accountType" id="accountType2" value="checkings" required>
+                <label class="form-check-label" for="accountType2">
+                    Checkings
+                </label>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary col-12">送信</button>
+        </form>
+      </div>
+      <div id="bankPage" class="bg-light col-12 p-4 d-none">
+      </div>
+      <div id="sidePage" class="bg-light col-12 p-4 d-none">
+      </div>
+      <div id="confirmPage" class="bg-light col-12 p-4 d-none">
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
