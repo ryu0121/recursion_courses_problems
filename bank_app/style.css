@@ -1,0 +1,19 @@
+body {
+  font-family: 'Sawarabi Mincho', sans-serif;
+}
+
+.bg-blue{
+  background-color: rgb(30, 30, 174);
+}
+
+.bg-green {
+  background: #4BA3A1;
+}
+
+.hover{
+  border-radius: 10% / 50%;
+}
+
+.hover:hover{
+  background-color: rgb(57, 57, 173);
+}
